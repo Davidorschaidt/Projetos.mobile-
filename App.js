@@ -1,27 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler'; 
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { Provider as PaperProvider } from 'react-native-paper';
+import DrawerNav from './DrawerNav'; 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.titulo}>CALCULADORA</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <NavigationContainer>
+        <DrawerNav />
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-titulo: {
-    fontSize: 24,
-    justifyContent: 'flex-start',
-    fontWeight: 'bold',
-    position: 'absolute',
-    top: 50,
-  },
-});
